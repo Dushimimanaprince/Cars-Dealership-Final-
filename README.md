@@ -1,6 +1,7 @@
 
   # 🚗 Car Sales Management System
-  ---
+---
+
 
   ## 📅 Project Details
 
