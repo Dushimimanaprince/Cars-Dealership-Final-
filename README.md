@@ -1,4 +1,3 @@
-
 # 🚗 Car Sales Management System
 ---
 
@@ -18,7 +17,8 @@ It is built using PHP for the frontend and Oracle (PL/SQL) for the backend. It a
 Whether it’s adding a new customer, selling a car, or checking what vehicles are in stock, this system helps you handle everything smoothly.
 
 ---
-##❗ Problem Statement
+
+## ❗ Problem Statement
 
 The Car Sales Management System is designed to solve the following challenges:
 
@@ -31,7 +31,9 @@ The Car Sales Management System is designed to solve the following challenges:
 👥 No Employee Tracking: Dealerships struggle to assign responsibility or track which employee handled which transaction.
 
 🛠️ No Automation or Auditing: Important actions (like inserting or deleting data) aren’t logged automatically, which creates accountability issues and risks of data tampering.
+
 ---
+
 ## 📌 Project Purpose
 
 Managing a car dealership manually can be time-consuming and error-prone. This project automates the dealership’s essential operations using a modern tech stack. 
@@ -44,9 +46,10 @@ Key goals include:
 - 🌐 Provide a **clean, user-friendly web interface** (dark mode) for staff interaction.
 
 ---
+
 ## 📊 Entity-Relationship Diagram (ERD)
 
-**Entities:**
+** Entities:**
 - Customers
 - Employees
 - Cars Inventory
@@ -65,7 +68,7 @@ Key goals include:
 
 ## 🧠 How It Works
 
-### 1. ** ⚡ Frontend (PHP, HTML, JS, CSS)**
+### 1. **⚡ Frontend (PHP, HTML, JS, CSS)**
 - Hosted on **XAMPP** as Local Server in `htdocs`.
 - Navigation menu includes:
   - **Home** – Carousel with company highlights
@@ -76,7 +79,7 @@ Key goals include:
   - **Spending** – View costs/profit tracking
   - **Logout** – End session
 
-### 2. ** ♾️ Backend (Oracle PL/SQL)**
+### 2. **♾️ Backend (Oracle PL/SQL)**
 - Oracle database with structured tables:
   - `Customers`, `Employees`, `Cars_Inventory`, `Car_Stock`, `Transactions`, `Audit_Log`
 - Includes:
