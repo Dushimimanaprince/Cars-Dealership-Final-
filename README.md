@@ -42,8 +42,9 @@ Key goals include:
 
 ## 🧱 Database Schema
 
-#### ➤ Customers Table
+
 ```sql
+#### ➤ Customers Table
 CREATE TABLE Customers (
     Customer_ID NUMBER PRIMARY KEY,
     Name VARCHAR2(100),
