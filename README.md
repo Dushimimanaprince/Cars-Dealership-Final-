@@ -15,8 +15,8 @@
 The Car Sales Management System is a web-based project made to help car dealers manage their daily business easily. This system allows users to add and view details about customers, employees, available cars, stock, and sales transactions — all in one place.
 
 It is built using PHP for the frontend and Oracle (PL/SQL) for the backend. It also includes an audit log feature that automatically keeps track of any changes made to important data. With a clean user interface and helpful features, the system makes car dealership management simpler, faster, and more organized.
-
 Whether it’s adding a new customer, selling a car, or checking what vehicles are in stock, this system helps you handle everything smoothly.
+
 ---
 ##❗ Problem Statement
 
