@@ -18,7 +18,7 @@
 
   Whether it’s adding a new customer, selling a car, or checking what vehicles are in stock, this system helps you handle everything smoothly.
   ---
-  ##❗ Problem Statement
+  ## ❗ Problem Statement
 
   The Car Sales Management System is designed to solve the following challenges:
 
@@ -31,6 +31,7 @@
   👥 No Employee Tracking: Dealerships struggle to assign responsibility or track which employee handled which transaction.
 
   🛠️ No Automation or Auditing: Important actions (like inserting or deleting data) aren’t logged automatically, which creates accountability issues and risks of data tampering.
+  
   ---
   ## 📌 Project Purpose
 
@@ -44,6 +45,7 @@
   - 🌐 Provide a **clean, user-friendly web interface** (dark mode) for staff interaction.
 
   ---
+  
   ## 📊 Entity-Relationship Diagram (ERD)
 
   **Entities:**
@@ -65,7 +67,7 @@
 
   ## 🧠 How It Works
 
-  ### 1. ** ⚡ Frontend (PHP, HTML, JS, CSS)**
+  ### 1. **⚡ Frontend (PHP, HTML, JS, CSS)**
   - Hosted on **XAMPP** as Local Server in `htdocs`.
   - Navigation menu includes:
     - **Home** – Carousel with company highlights
@@ -76,7 +78,7 @@
     - **Spending** – View costs/profit tracking
     - **Logout** – End session
 
-  ### 2. ** ♾️ Backend (Oracle PL/SQL)**
+  ### 2. **♾️ Backend (Oracle PL/SQL)**
   - Oracle database with structured tables:
     - `Customers`, `Employees`, `Cars_Inventory`, `Car_Stock`, `Transactions`, `Audit_Log`
   - Includes:
@@ -133,6 +135,7 @@
 
   ---
 
+
   ## 📅 Timeline
 
   **Phase I: Project Goal ✅**
@@ -142,17 +145,20 @@
 
   **Phase II: Logical Design ✅**
 
-  Entity-Relationship Diagrams (ERDs) were created to define all entities and their relationships. Primary keys, foreign keys, and normalization (up to 3NF) were applied to remove redundancy. Data types and constraints were applied as per business rules.
+  -Entity-Relationship Diagrams (ERDs) were created to define all entities and their relationships. Primary keys, foreign keys, and normalization (up to 3NF) were applied to remove 
+   redundancy. Data types and constraints were applied as per business rules.
 
   ![ERD 1](https://github.com/Dushimimanaprince/Cars-Dealership-Final-/blob/1d857561a5facb0374abd309dfb0d6f11534acde/proj/screenshot/ERD.png)
 
   **Phase IV: Database Creation ✅**
-- Tables were physically created in Oracle using SQL DDL scripts. Sequences were defined for ID generation. Indexes and integrity constraints were enforced to ensure consistent and valid data entry.
+- Tables were physically created in Oracle using SQL DDL scripts. Sequences were defined for ID generation. Indexes and integrity constraints were enforced to ensure consistent and 
+  valid data entry.
 
 ![CREATING DATABASE CONNECTION](https://github.com/Dushimimanaprince/Cars-Dealership-Final-/blob/c47520fd09b25b049d4848966c00643c7140c3cb/proj/screenshot/1.png)
 
  **Phase V: Data Insertion and Validation ✅**
-Sample records with realistic Rwandan student and instructor names were inserted. Test data respected all constraints. Data was validated for consistency, and foreign key relationships were properly tested using both attendance and grades records.
+-Sample records with realistic Rwandan student and instructor names were inserted. Test data respected all constraints. Data was validated for consistency, and foreign key relationships 
+ were properly tested using both attendance and grades records.
 ![INSERT INTO CUSTOMERS via Webpage](https://github.com/Dushimimanaprince/Cars-Dealership-Final-/blob/c47520fd09b25b049d4848966c00643c7140c3cb/proj/screenshot/Insert.png)
 
  **Phase VI: Procedures, Functions, Triggers, Packages ✅**
