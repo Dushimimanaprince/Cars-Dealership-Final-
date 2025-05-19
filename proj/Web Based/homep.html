@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Car Sales System - Home</title>
+<style>
+  /* Basic Reset & Dark Mode */
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f5f6fa;
+    overflow-x: hidden;
+  }
+
+  /* Navigation Bar */
+  nav {
+    background-color: #2f3640;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    color: #f5f6fa;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #44bd32;
+  }
+  nav form {
+    margin-left: auto;
+  }
+  nav input[type="submit"] {
+    background: #e84118;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  nav input[type="submit"]:hover {
+    background: #c23616;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(68, 189, 50, 0.7);
+  }
+
+  /* Slides */
+  .slide {
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+
+  /* Text overlay */
+  .slide-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: #f5f6fa;
+    font-size: 28px;
+    font-weight: bold;
+    max-width: 60%;
+    text-shadow: 2px 2px 6px #000;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 12px;
+    margin-top: -22px;
+    color: #f5f6fa;
+    font-weight: bold;
+    font-size: 28px;
+    user-select: none;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(68, 189, 50, 0.7);
+  }
+
+  /* Dots */
+  .dots {
+    text-align: center;
+    padding: 15px 0;
+  }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  .dot.active {
+    background-color: #44bd32;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="homep.html">Home</a>
+  <a href="insert_all.html">Insert</a>
+  <a href="review.html">Review Form</a>
+  <a href="audit.php">Audit Form</a>
+  <a href="process.html">Process</a>
+  <a href="spending.html">Spending</a>
+  <form action="logout.php" method="post">
+    <input type="submit" value="Logout" >
+</form>
+</nav>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+
+  <div class="slide fade">
+    <img src="1.jpg" alt="Car Production 1" />
+    <div class="slide-text">Discover the Excellence of Car Production</div>
+  </div>
+
+  <div class="slide fade">
+    <img src="7.jpg" alt="Car Production 2" />
+    <div class="slide-text">Precision Engineering Meets Innovation</div>
+  </div>
+
+  <div class="slide fade">
+    <img src="3.jpg" alt="Car Production 3" />
+    <div class="slide-text">Driving the Future of Automotive Excellence</div>
+  </div>
+  <div class="slide fade">
+    <img src="4.jpg" alt="Car Production 4" />
+    <div class="slide-text">Power Your Vision Through Engines </div>
+  </div>
+  <div class="slide fade">
+    <img src="5.jpg" alt="Car Production 5" />
+    <div class="slide-text">Process Your Dreams With Us</div>
+  </div>
+  <div class="slide fade">
+    <img src="6.jpg" alt="Car Production 6" />
+    <div class="slide-text">All You Need Is Power And Courage </div>
+  </div>
+
+  <!-- Navigation arrows -->
+  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+  <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+<!-- Dots -->
+<div class="dots" style="text-align:center;">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+  let slideIndex = 1;
+  showSlide(slideIndex);
+
+  function changeSlide(n) {
+    showSlide(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlide(slideIndex = n);
+  }
+
+  function showSlide(n) {
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+
+    for (let slide of slides) {
+      slide.style.display = "none";
+    }
+    for (let dot of dots) {
+      dot.className = dot.className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(() => changeSlide(1), 5000);
+</script>
+
+</body>
+</html>

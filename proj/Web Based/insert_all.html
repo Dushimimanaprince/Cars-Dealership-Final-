@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Records into Car Sales System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e272e;
+            color: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0f1419;
+            color: #f5f6fa;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: #e84118;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c23616;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: #2f3640;
+            overflow: hidden;
+        }
+        .audit-btn {
+            position: absolute;
+            right: 150px;
+            top: 20px;
+            background-color: #e84118;
+            color: white;
+            border: none;
+            padding: 0px 0px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .review-btn {
+            position: absolute;
+            right: 300px;
+            top: 20px;
+            background-color: #e84118;
+            color: white;
+            border: none;
+            padding: 0px 0px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .tabs button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            color: #f5f6fa;
+            font-size: 16px;
+            flex-grow: 1;
+        }
+
+        .tabs button:hover {
+            background-color: #353b48;
+            transform: scale(1.03);
+        }
+
+        .tabs button.active {
+            background-color: #40739e;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #2f3640;
+            border-top: 1px solid #57606f;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="number"],
+        form input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 16px 0;
+            background-color: #1e272e;
+            color: #f5f6fa;
+            border: 1px solid #57606f;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        form input[type="submit"] {
+            background-color: #44bd32;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #4cd137;
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #popup-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #44bd32;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Welcome Popup -->
+<div id="popup-message">
+    🎉 Welcome back 🎊.
+</div>
+
+<h1>
+    Insert Records
+    <form action="homep.html" method="post" style="display:inline;">
+        <input type="submit" class="logout-btn" value="▶️Back To Home">
+    </form>
+
+</h1>
+
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab(event, 'Customer')">Customer</button>
+    <button class="tab-button" onclick="openTab(event, 'Employee')">Employee</button>
+    <button class="tab-button" onclick="openTab(event, 'Vehicle')">Vehicle</button>
+    <button class="tab-button" onclick="openTab(event, 'Transaction')">Transaction</button>
+    <button class="tab-button" onclick="openTab(event, 'Stock')">Stock</button> <!-- New Tab -->
+</div>
+
+<div class="container">
+    <div id="Customer" class="tab-content active">
+        <h2>Insert Customer</h2>
+        <form class="ajax-form" data-form-type="customer">
+            ID: <input type="number" name="customer_id" required>
+            Name: <input type="text" name="customer_name" required>
+            Contact: <input type="text" name="customer_contact" required>
+            Email: <input type="email" name="customer_email" required>
+            <input type="submit" value="Insert Customer">
+        </form>
+    </div>
+
+    <div id="Employee" class="tab-content">
+        <h2>Insert Employee</h2>
+        <form class="ajax-form" data-form-type="employee">
+            ID: <input type="number" name="employee_id" required>
+            Name: <input type="text" name="employee_name" required>
+            Role: <input type="text" name="employee_role" required>
+            Contact: <input type="text" name="employee_contact" required>
+            <input type="submit" value="Insert Employee">
+        </form>
+    </div>
+
+    <div id="Vehicle" class="tab-content">
+        <h2>Insert Car Inventory</h2>
+        <form class="ajax-form" data-form-type="car">
+            Vehicle ID: <input type="number" name="vehicle_id" required>
+            Make: <input type="text" name="make" required>
+            Model: <input type="text" name="model" required>
+            Price: <input type="number" name="price" step="0.01" required>
+            <input type="submit" value="Insert Car">
+        </form>
+    </div>
+
+    <div id="Transaction" class="tab-content">
+        <h2>Insert Transaction</h2>
+        <form class="ajax-form" data-form-type="transaction">
+            Transaction ID: <input type="number" name="transaction_id" required>
+            Customer ID: <input type="number" name="transaction_customer_id" required>
+            Vehicle ID: <input type="number" name="transaction_vehicle_id" required>
+            Sale Date: <input type="date" name="sale_date" required>
+            <input type="submit" value="Insert Transaction">
+        </form>
+    </div>
+    <div id="Stock" class="tab-content">
+        <h2>Insert Car Stock</h2>
+        <form class="ajax-form" data-form-type="stock">
+            Vehicle ID: <input type="number" name="stock_vehicle_id" required>
+            Model: <input type="text" name="stock_model" required>
+            Available Stock: <input type="number" name="available_stock" required>
+            Sold Stock: <input type="number" name="sold_stock" required>
+            <input type="submit" value="Insert Stock Record">
+        </form>
+        <br>
+        <button onclick="location.href='view.php'" style="padding: 10px 20px; background-color: #2980b9; color: white; border: none; border-radius: 5px; cursor: pointer;">View All Stock</button>
+    </div>
+</div>
+
+
+<script>
+    // Tab switching
+    function openTab(evt, tabName) {
+        const tabContents = document.getElementsByClassName("tab-content");
+        const tabButtons = document.getElementsByClassName("tab-button");
+
+        for (let content of tabContents) {
+            content.classList.remove("active");
+        }
+
+        for (let btn of tabButtons) {
+            btn.classList.remove("active");
+        }
+
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+
+    // AJAX form submission
+    document.querySelectorAll(".ajax-form").forEach(form => {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            formData.append("form_type", form.getAttribute("data-form-type"));
+
+            fetch("insert_all.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result);  // Show response message
+                form.reset();   // Optional: reset form fields
+            })
+            .catch(error => {
+                alert("An error occurred: " + error);
+            });
+        });
+    });
+
+    // Popup welcome message fade-out
+    setTimeout(() => {
+        const popup = document.getElementById("popup-message");
+        if (popup) {
+            popup.style.opacity = 0;
+            setTimeout(() => popup.remove(), 1000);
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>

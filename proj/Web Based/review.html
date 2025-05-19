@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Purchase Lookup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        input[type="number"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 20px;
+            border: none;
+            font-size: 16px;
+        }
+
+        input[type="number"] {
+            background-color: #2a2a2a;
+            color: #fff;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> 🔎🔍 Vehicle Purchase Lookup</h2>
+        <form action="review.php" method="post">
+            <label for="vehicle_id">Enter Vehicle ID:</label><br>
+            <input type="number" id="vehicle_id" name="vehicle_id" required><br>
+            <input type="submit" value="Find Customers">
+        </form>
+    </div>
+</body>
+</html>

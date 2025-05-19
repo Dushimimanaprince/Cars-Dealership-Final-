@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Login</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        h2 {
+            color: #00ffcc;
+        }
+        input[type="text"],
+        input[type="password"] {
+            background-color: #1e1e1e;
+            color: white;
+            border: 1px solid #555;
+            padding: 8px;
+            margin-bottom: 12px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #00bfa5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #009688;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .switch {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .switch a {
+            color: #00bfa5;
+            text-decoration: none;
+        }
+         form input[type="text"],
+        form input[type="email"],
+        form input[type="number"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 16px 0;
+            background-color: #1e272e;
+            color: #f5f6fa;
+            border: 1px solid #57606f;
+            border-radius: 17px;
+            box-sizing: border-box;
+        }
+        form input[type="submit"] {
+            background-color: #44bd32;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Employee Login</h2>
+        <form action="login.php" method="post">
+            Username: <input type="text" name="username" required><br>
+            Password: <input type="password" name="password" required><br>
+            <input type="submit" value="Login">
+        </form>
+
+        <div class="switch">
+            <p>Don't have an account?</p>
+            <form action="signup.html" method="get">
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
