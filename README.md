@@ -49,7 +49,7 @@ Key goals include:
 
 ## 📊 Entity-Relationship Diagram (ERD)
 
-** Entities:**
+**Entities:**
 - Customers
 - Employees
 - Cars Inventory
