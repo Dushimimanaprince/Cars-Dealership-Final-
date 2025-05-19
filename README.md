@@ -63,7 +63,8 @@
   - Transactions update stock by adjusting sold and available units.
   - Audit log records all data changes via triggers.
 
-  ---
+
+---
 
   ## 🧠 How It Works
 
@@ -157,24 +158,30 @@
 ![CREATING DATABASE CONNECTION](https://github.com/Dushimimanaprince/Cars-Dealership-Final-/blob/c47520fd09b25b049d4848966c00643c7140c3cb/proj/screenshot/1.png)
 
  **Phase V: Data Insertion and Validation ✅**
--Sample records with realistic Rwandan student and instructor names were inserted. Test data respected all constraints. Data was validated for consistency, and foreign key relationships 
+ 
+- Sample records with realistic Rwandan student and instructor names were inserted. Test data respected all constraints. Data was validated for consistency, and foreign key relationships 
  were properly tested using both attendance and grades records.
 ![INSERT INTO CUSTOMERS via Webpage](https://github.com/Dushimimanaprince/Cars-Dealership-Final-/blob/c47520fd09b25b049d4848966c00643c7140c3cb/proj/screenshot/Insert.png)
 
  **Phase VI: Procedures, Functions, Triggers, Packages ✅**
 - Custom PL/SQL components were developed:
-Procedure: Automates tasks like inserting transactions and updating stock in a single call.
+  
+- **Procedure: Automates tasks like inserting transactions and updating stock in a single call.**
 
-Trigger: Automatically logs every data change into the audit table after key actions (insert, update, delete).
+- **Trigger: Automatically logs every data change into the audit table after key actions (insert, update, delete).**
 
-Function: Calculates values like total spending by a customer, which can be reused in queries or reports.
+- **Function: Calculates values like total spending by a customer, which can be reused in queries or reports.**
 
-Cursor: Handles row-by-row processing of data, such as displaying all car sales in a loop.
+- **Cursor: Handles row-by-row processing of data, such as displaying all car sales in a loop.**
 
-Package: Groups related procedures and functions into one unit for better organization and reusability.
+- **Package: Groups related procedures and functions into one unit for better organization and reusability.**
+  
 
 **Phase VII: Final Documentation & Presentation ✅**
 - [tue_27185_confiance_plsql2.pptx](https://github.com/Dushimimanaprince/Cars-Dealership-Final-/blob/2346267fedcd0d040779b08cb6c5633de01428d7/proj/Car_Sales_Project_Presentation.pptx)
+
+
+---
 
 
 ## 📄 License
